@@ -1,0 +1,12 @@
+main{
+	const verify:Bool = true;
+	if(verify){
+		print(1);
+	} else {
+		print(2);
+	}
+
+	while(verify){
+		print("while");
+	}
+}

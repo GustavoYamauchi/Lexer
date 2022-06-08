@@ -1,0 +1,25 @@
+<program> ::= "main" <block>
+<block> ::= "{" <sentence> "}"
+<sentence> ::= ((<atribuition> ";") | <condition>)*
+<atribuition> ::= (<variable> | <create_variable>) "=" <expression>
+<create_variable> ::= ("const" | "var") <variable> ":" <typ> 
+<condition> ::= <condition_loop> | <condition_if>
+<condition_loop> ::= "while" <expression> <block>
+<condition_if> ::= "if" <expression> <block> ("else" <block>)?
+
+<expression> = <simple-expression> (<operator_comparation> <simple-expression>)?
+<simple-expression> = <operator_low>? <term> (<operator_low> <term>)* 
+<term> = <factor> (<operator_high> <factor>)*
+<factor> = <variable> | <number> | <string> | "(" <expression> ")"
+
+
+<variable> ::= [a-z] ([a-z] | [A-Z] | [0-9])+
+<typ> ::= ("Number" | "String" | "Bool")
+<number> ::= [0-9]+
+<string> ::= """ ([a-z] | [A-Z] | [0-9])+ """
+<operator_low> ::= ("+" | "-")
+<operator_high> ::= ("*" | "/")
+<operator_atribuition> ::= "="
+<operator_definition> ::= ":"
+<operator_comparation> ::= ( (("<" | ">" | "!") "="?) | "==")  
+<new_line> ::= ("\n") 

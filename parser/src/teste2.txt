@@ -1,0 +1,7 @@
+const main:Bool; teste(){};
+
+
+main{
+	const main:Number = 10;
+	const main2:Bool = false;	
+}
